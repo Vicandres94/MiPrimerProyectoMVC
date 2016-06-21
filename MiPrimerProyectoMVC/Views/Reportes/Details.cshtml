@@ -1,0 +1,82 @@
+﻿@model Model.Reporte
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Reporte</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Equipo.NombreEquipo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Equipo.NombreEquipo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Usuario.UserName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Usuario.UserName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fecha_Reporte)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fecha_Reporte)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fecha_Realizado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fecha_Realizado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.User_RealizadoId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User_RealizadoId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserId_Reporte)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserId_Reporte)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ReporteId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,57 @@
+﻿@model Model.Equipo
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">Detalles</h3>
+    </div>
+    <div class="panel-body">
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Sala.Nombre)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Sala.Nombre)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.NombreEquipo)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NombreEquipo)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Especificacion)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Especificacion)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Estado)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Estado)
+            </dd>
+
+        </dl>
+       
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <a href="~/Equipos/Index" class="btn btn-default">Regresar</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+   

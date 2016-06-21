@@ -1,0 +1,79 @@
+﻿@model IEnumerable<Model.Reporte>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+           Nombre Sala 
+        </th>
+        <th>
+            Equipo
+        </th>
+        <th>
+            Encargado
+        </th>
+        <th>
+           Fecha de Reporte
+        </th>
+        
+        <th>
+            Descripcion
+        </th>
+        <th>
+            Estado
+        </th>        
+        <th>
+           Reportado Por
+        </th>
+        <th></th>
+    </tr>
+ @{ var counter = 0;}   
+@foreach (var item in Model)
+{
+
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Equipo.Sala.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Equipo.NombreEquipo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Usuario.Nombre)
+            @Html.DisplayFor(modelItem => item.Usuario.Apellido)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fecha_Reporte)
+        </td>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.Descripcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Estado)
+        </td>
+        
+        <td>
+           
+            @ViewBag.Usuario[counter].Nombre
+            @ViewBag.Usuario[counter].Apellido
+                
+          @{ counter++; }            
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ReporteId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ReporteId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ReporteId })
+        </td>
+    </tr>
+}
+
+</table>

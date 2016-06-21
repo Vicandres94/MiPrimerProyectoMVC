@@ -1,0 +1,75 @@
+﻿@model IEnumerable<Model.Equipo>
+
+
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="panel panel-primary">
+    <div class="panel-heading">Equipos</div>
+    <div class="panel-body">
+       
+        <table class="table table-striped">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Sala.Nombre)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NombreEquipo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Especificacion)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Estado)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Sala.Nombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NombreEquipo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Especificacion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Estado)
+                    </td>
+                    <td>
+
+                        <a href="~/Equipos/Edit/@item.EquipoId" class="" title="editar">
+                            <i class="glyphicon glyphicon-pencil">
+                            </i>
+                        </a>|
+                        <a href="~/Equipos/Details/@item.EquipoId" class="" title="Visualizar">
+                            <i class="glyphicon glyphicon-eye-open">
+                            </i>
+                        </a>|
+                        <a href="~/Equipos/Delete/@item.EquipoId" class="" title="Eliminar">
+                            <i class="glyphicon glyphicon-remove">
+                            </i>
+                        </a>
+                    </td>
+
+                </tr>
+
+            }
+
+        </table>
+
+        <p>
+            <center>
+                <a href="~/Equipos/Create" class="btn btn-default">Crear Nuevo</a>
+            </center>
+        </p>
+    </div>
+</div>
+
+
