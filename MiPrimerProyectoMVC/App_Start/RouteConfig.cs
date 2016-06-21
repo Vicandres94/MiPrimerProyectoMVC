@@ -18,6 +18,18 @@ namespace MiPrimerProyectoMVC
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Login", action = "Index", id = UrlParameter.Optional }
             );
+
+            routes.MapRoute(
+                name: "ListaSalas",
+                url: "{controller}/{action}",
+                defaults: new { controller = "Salas", action = "salas" }
+            );
+
+            routes.MapRoute(
+              name: "ListaEquipos",
+              url: "{controller}/{action}/{id}",
+              defaults: new { controller = "Reportes", action = "equipos", id=UrlParameter.Optional }
+          );
         }
     }
 }

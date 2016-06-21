@@ -55,6 +55,7 @@ namespace MiPrimerProyectoMVC.Controllers
             if (ModelState.IsValid)
             {
                 db.Equipos.Add(equipo);
+                equipo.Estado = "Disponible";
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

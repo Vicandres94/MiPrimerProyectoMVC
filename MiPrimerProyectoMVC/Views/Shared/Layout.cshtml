@@ -25,10 +25,11 @@
 
     <script src="~/assets/js/ini.js"></script>
     <script src="~/assets/js/jquery.form.js"></script>
+    
 
     <div class="container">
 
-
+@RenderBody()
 
         @if (SessionHelper.ExistUserInSession())
         {
@@ -41,20 +42,20 @@
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
-                            @Html.ActionLink("Mantenimiento Web", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                            @Html.ActionLink("Mantenimiento Web", "Index", "Reportes", new { area = "" }, new { @class = "navbar-brand" })
                         </div>
                         <div class="navbar-collapse collapse">
                             <ul class="nav navbar-nav">
-                                <li>@Html.ActionLink("Equipos", "Index", "Home")</li>
-                                <li>@Html.ActionLink("Reportes", "About", "Home")</li>
-                                <li>@Html.ActionLink("Usuarios", "Contact", "Home")</li>
+                                <li>@Html.ActionLink("Equipos", "Index", "Equipos")</li>
+                                <li>@Html.ActionLink("Reportes", "Index", "Reportes")</li>
+                                <li>@Html.ActionLink("Usuarios", "Index", "Usuarios")</li>
                             </ul>
                            
                         </div>
                     </div>
                 </div>
             <div class="container body-content">
-                @RenderBody()
+                
                 <hr />
                 <div class="col-xs-12 text-center well">
                     Bienvenido, <b>@FrontUser.Get().Nombre @FrontUser.Get().Apellido</b> [<a href="~/home/salir">Cerrar Sesión</a>]
